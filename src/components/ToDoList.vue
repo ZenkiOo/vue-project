@@ -1,10 +1,21 @@
 <template>
-   <div>
-        <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li>
-        </ul>   
-    </div> 
+  <div>
+    <ul>
+      <ToDoItem 
+      v-for="todo of todos" 
+      :todo="todo" 
+      :key="todo.id" 
+      />
+    </ul>
+  </div>
 </template>
+
+<script>
+import ToDoItem from "@/components/ToDoItem.vue";
+export default {
+  props: ["todos"],
+  components: {
+    ToDoItem
+  }
+};
+</script>
